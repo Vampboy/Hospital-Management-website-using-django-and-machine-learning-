@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="csrf_token" content="{{ csrf_token }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Patient Data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/main.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1 class="heading">Hospital Admission Data</h1>
+      <form  style="width:500px; " method="POST" action="{% url 'newpatient' %}"> {% csrf_token %}
+          <div class="form-row">
+              <div class="form-group">
+                <label for=""><b>Patient ID: </b>&emsp; {{ tat }}</label>
+              </div>
+            </div>
+          <div class="form-row">
+          <div class="form-group">
+            <label for=""><b>Case No : </b>&emsp; {{ value.Caseno }}</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group input">
+            <label for=""><b>Patient Name: </b>&emsp; {{ value.Patient_name  }}</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group input">
+            <label for=""><b>Doctor Name: </b>&emsp; {{ value.Doctor_name }}</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group input">
+            <label for=""><b>Date of Birth: </b>&emsp; {{ value.dob }}</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group input">
+            <label for=""><b>Entery Date: </b>&emsp; {{ value.Entery_date }} </b>&emsp; {{ value.last_name }}</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group input">
+            <label for=""><b>Department : </b>&emsp; {{ value.Department }}</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group input">
+            <label for=""><b>Remark: </b>&emsp; {{ value.Remark }}</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group input">
+            <label for=""><b>Admitting Date: </b>&emsp; {{ value.Admitting_date }}</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group input">
+            <label for=""><b>Discharge Date: </b>&emsp; {{ value.Discharge_Date }}</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group input">
+            <label for=""><b>Bed Alloted: </b>&emsp; {{ value.bed_alloted }}</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group input">
+            <label for=""><b>Hospitalized : </b>&emsp; {{ value.hspt_prcnt }}</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group input">
+            <label for=""><b>Not Hospitalized : </b>&emsp; {{ value.not_h_prcnt }}</label>
+          </div>
+        </div>
+      </form>
+      <div class="b-container" style="margin-right:200px;width: 100%;">
+          <h2><a href="">
+            <input style="width:150px;" type="submit" class="btn btn-primary" value="Edit Info"></input>
+              </a>
+              &emsp;
+            <a href="/delete">
+              <input style="width:150px;" type="submit" class="btn btn-primary" value="Delete Info"></input>
+                </a>
+              </h2>
+            </div>
+    </div>
+  </body>
+</html>

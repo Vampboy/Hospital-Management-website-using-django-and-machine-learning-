@@ -1,0 +1,31 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Patient Search</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" media="screen" href="/static/css/main.css" />
+
+</head>
+
+<body>
+  <form class="wrapper" style="height:100%;" method="post">
+    {% csrf_token %}
+    <h1 class="heading" style="padding-top:100px;">Patient Registered Search</h1>
+    <div class="form-group">
+      <input type="text" id="pid1" name="pid1" placeholder="Enter Patient ID" />
+      <br>
+    </div>
+    <input type="submit" class="btn btn-primary" Value="Search"></input>
+    <h1 class="heading" style="padding-top:100px;">Patient Admitted Search</h1>
+    <div class="form-group">
+      <input type="text" id="pid2" name="pid2" placeholder="Enter Patient ID" />
+      <br>
+    </div>
+    <input type="submit" class="btn btn-primary" Value="Search"></input>
+  </form>
+
+</body>
+
+</html>

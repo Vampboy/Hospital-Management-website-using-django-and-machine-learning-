@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Hospital Management System</title>
+  <link rel="stylesheet" href="/static/css/main.css" />
+</head>
+
+<body>
+<div class="wrapper">
+  <div class="report">
+  <button onclick="myFunction()">2009年 統 計 相 關 資 訊</button>
+  <button onclick="myFunction1()">2010年 統 計 相 關 資 訊</button>
+</div>
+</span><br /><br />
+  <div id="report2009" defalt >
+    <img src="/static/images/2009image002.png" width="490" height="280" />
+    <img src="/static/images/2009image001.png" width="490" height="280" /><br />
+    <img src="/static/images/2009image003.png" width="490" height="280" />
+    <img src="/static/images/2009image004.png" width="490" height="280" /><br />
+    <img src="/static/images/2009image006.png" width="490" height="280" />
+    <img src="/static/images/2009image005.png" width="490" height="280" /><br />
+    <img src="/static/images/2009image007.png" width="490" height="280" />
+  </div>
+  <div id="report2010">
+      <img src="/static/images/2010image015.png" width="490" height="280" />
+      <img src="/static/images/2010image014.png" width="490" height="280" /><br/>
+      <img src="/static/images/2010image016.png" width="490" height="280" />
+      <img src="/static/images/2010image017.png" width="490" height="280" /><br/>
+      <img src="/static/images/2010image022.png" width="490" height="280" />
+      <img src="/static/images/2010image024.png" width="490" height="280" /><br/>
+      <img src="/static/images/2010image026.png" width="490" height="280" />
+    </div>
+    </div>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("report2009");
+      var y = document.getElementById("report2010");
+      
+      if (x.style.display === "none") {
+        x.style.display = "block";
+        y.style.display = "none";
+      } else {
+        y.style.display = "none";
+      }
+    }
+    function myFunction1() {
+      var x = document.getElementById("report2009");
+      var y = document.getElementById("report2010");
+      
+      if (y.style.display === "none") {
+        y.style.display = "block";
+        x.style.display = "none";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
+</body>
+
+</html>

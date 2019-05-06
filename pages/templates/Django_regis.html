@@ -1,0 +1,49 @@
+{% load widget_tweaks %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <title>Simple is Better Than Complex</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/main.css" />
+
+  </head>
+
+<body>
+<div class="wrapper">
+    <h1 class="heading">Details</h1>
+  <form  method="post" novalidate>
+    <div class="outerbox">
+    {% csrf_token %}
+  
+    {% for hidden_field in form.hidden_fields %}
+      {{ hidden_field }}
+    {% endfor %}
+  
+    {% for field in form.visible_fields %}
+      <div class="form-row">
+          <div class="form-group">
+              <div class="label">
+                    {{ field.label_tag }}
+                </div>
+            <br>
+            <div class="input">
+            {{ field }}
+            </div>
+            {% if field.help_text %}
+            <small class="form-text text-muted">{{ field.help_text }}</small>
+            {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+      
+    <input type="submit" class="btn btn-primary"></input>
+  </div>
+  </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Hospital Management System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1 class="heading">New Patient Registration</h1>
+      <form action="">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Registration Clerk ID</label>
+            <input type="text" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Registration Location</label>
+            <input type="text" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Registration Date & Time</label>
+            <input type="datetime-local" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Healthcare Number</label>
+            <input type="text" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Patient Name</label>
+            <input type="text" placeholder="First Name" />
+            <input type="text" placeholder="Middle Name" />
+            <input type="text" placeholder="Last Name" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Address</label>
+            <textarea
+              name="address"
+              rows="5"
+              placeholder="Street Address"
+            ></textarea>
+            <div class="form-col">
+              <input type="text" placeholder="City" />
+              <input type="text" placeholder="State" />
+            </div>
+            <div class="form-col">
+              <input type="text" placeholder="Zip Code" />
+              <input type="text" placeholder="Country" />
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Phone Number</label>
+            <div class="form-col">
+              <input type="tel" placeholder="Home" />
+              <input type="tel" placeholder="Work(Optional)" />
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Email(Optional)</label>
+            <input type="email" placeholder="abc@example.com" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Gender</label>
+            <div class="form-col">
+              <div class="radios">
+                <input type="radio" label="Male" name="gender" />
+                Male
+              </div>
+              <div class="radios">
+                <input type="radio" label="Female" name="gender" />
+                Female
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Date of Birth</label>
+            <input type="date" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Date of Birth</label>
+            <input type="date" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Marital Status</label>
+            <div class="form-col">
+              <div class="radios">
+                <input type="radio" label="Married" name="m-status" />
+                Married
+              </div>
+              <div class="radios">
+                <input type="radio" label="Non-Married" name="m-status" />
+                Non-Married
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3 class="subheading">Emergency Contact</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Name</label>
+            <input type="text" placeholder="First Name" />
+            <input type="text" placeholder="Last Name" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Relationship</label>
+            <input
+              type="text"
+              placeholder="Father/Mother/Brother/Sister/Spouse"
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Contact Number</label>
+            <input type="tel" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Reason for Registration</label>
+            <input type="text" />
+          </div>
+        </div>
+
+        <div class="form-row center">
+          <input type="submit" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

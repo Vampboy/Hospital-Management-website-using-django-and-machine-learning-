@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="csrf_token" content="{{ csrf_token }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Hospital Management System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/main.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1 class="heading">New Patient Registration</h1>
+      <form class="bg" method="POST" action="{% url 'newpatient' %}"> {% csrf_token %}
+          <div class="form-row">
+              <div class="form-group">
+                <label for="">Patient ID</label>
+                <input type="text" value="" required/>
+              </div>
+            </div>
+          <div class="form-row">
+          <div class="form-group">
+            <label for="">Registration Clerk ID</label>
+            <input type="text" value="{{ clerk_ID }}" required/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Registration Location</label>
+            <input type="text" value="{{ Registration_Loc }}" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Registration Date & Time</label>
+            <input type="date" value="{{ Register_Date_time }}"  required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Healthcare Number</label>
+            <input type="text" value="{{ HealthCare_no }}"  required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Patient Name</label>
+            <input type="text" placeholder="First Name" value="{{ first_name }}"  required />
+            <input type="text" placeholder="Middle Name" value="" />
+            <input type="text" placeholder="Last Name" value="{{ last_name }}"  required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Address</label>
+            <textarea
+              name="address"
+              rows="5"
+              placeholder="Street Address" value="{{ Address }}"  required 
+            ></textarea>
+            <div class="form-col">
+              <input type="text" placeholder="City" value="{{ city }}"  required />
+              <input type="text" placeholder="State" value="{{ state }}"  required />
+            </div>
+            <div class="form-col">
+              <input type="text" placeholder="Zip Code" value="{{ zip_code }}"  required />
+              <input type="text" placeholder="Country" value="{{ country }}"  required />
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Phone Number</label>
+            <div class="form-col">
+              <input type="tel" placeholder="Home" value="{{ phone_no_home }}"  required />
+              <input type="tel" placeholder="Work(Optional)" value="{{ phone_no_work }}"  required />
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for=""
+              >Email
+              <h6>(Optional)</h6></label
+            >
+            <input type="email" placeholder="abc@example.com" value="{{ email }}"  required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Gender</label>
+            <div class="form-col">
+              <div class="radios">
+                <input type="radio" label="Male" name="gender" value="{{ sex }}"  required />
+                Male
+              </div>
+              <div class="radios">
+                <input type="radio" label="Female" name="gender" value="{{ sex }}"  required />
+                Female
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Date of Birth</label>
+            <input type="date" value="{{ dob }}"  required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Marital Status</label>
+            <div class="form-col">
+              <div class="radios">
+                <input type="radio" label="Married" name="m-status" value="{{ maritial_status  }}"  required />
+                Married
+              </div>
+              <div class="radios">
+                <input type="radio" label="Non-Married" name="m-status" value="{{ maritial_status }}"  required />
+                Non-Married
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3 class="subheading">Emergency Contact</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Name</label>
+            <input type="text" placeholder="First Name" value="{{ emer_first_name }}"  required />
+            <input type="text" placeholder="Last Name" value="{{ emer_last_name }}"  required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Relationship</label>
+            <input
+              type="text"
+              placeholder="Father/Mother/Brother/Sister/Spouse" value="{{ relationship }}"  required 
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Contact Number</label>
+            <input type="tel" value="{{ emer_contact }}"  required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="">Reason for Registration</label>
+            <input type="text" value="{{ description }}"  required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for=""
+              >Blood Presure
+              <h6>(139/89 mmHg -Above this is not Normal)</h6></label
+            >
+            <input type="text" value="{{ blood_pressure }}"  required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for=""
+              >Body Temperature
+              <h6>(till 100.4 F - Normal Range)</h6></label
+            >
+            <input type="text" value="{{ body_temp }}"  required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for=""
+              >Pulse
+              <h6>(60-100 : Normal Range)</h6></label
+            >
+            <input type="text" value="{{ pulse }}"  required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for=""
+              >Breathing
+              <h6>(12-20 : Normal Range)</h6></label
+            >
+            <input type="text" value="{{ breath }}" required />
+          </div>
+        </div>
+
+        <div class="form-row center">
+          <input type="submit" value="submit"/>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

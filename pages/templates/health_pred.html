@@ -1,0 +1,198 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Health Condition</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700"
+      rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/main.css" />
+
+  </head>
+
+<body>
+  <div class="wrapper" style="height: auto;">
+    <form  >
+            {% csrf_token %}
+        <h1 class="heading" style="padding-top:100px;text-align: center" >Health Condition</h1>
+        <br>
+        <h2><label>{{ percent }} % You need to stay in the hospital</label></h2>
+
+      </form>
+      <br>
+      <div class="form-col" style="padding-top:20px;text-align: center;">
+      <h2><a href="/">
+        <input style="width:150px;" type="submit" class="btn btn-primary" value="Home"></input>
+          </a>
+          &emsp;
+        <a href="/Hospitalization_form">
+          <input style="width:150px;" type="submit" class="btn btn-primary" value="Admission form"></input>
+            </a>
+          </h2>
+        </div>
+    <h1 class="heading" style="padding-top:10px;">Patient Data</h1>
+    <form  style="width:auto; " method="POST"> {% csrf_token %}
+        <div style="width:1000px;">
+        <div class="form-row" style="float: left;width:50%;padding: 20px">
+            <div class="form-group input">
+              <label for=""><b>Patient ID: </b>&emsp; {{ value.Pno }}</label>
+            </div>
+          </div>
+        <div class="form-row" style="float: left;width:50%;padding: 20px">
+        <div class="form-group input">
+          <label for=""><b>Registration Clerk ID: </b>&emsp; {{ value.clerk_ID }}</label>
+        </div>
+      </div>
+      <div class="form-row" style="float: left;width:50%;padding: 20px">
+        <div class="form-group input">
+          <label for=""><b>Registration Location: </b>&emsp; {{ value.Registration_Loc  }}</label>
+        </div>
+      </div>
+      <div class="form-row" style="float: left;width:50%;padding: 20px">
+        <div class="form-group input">
+          <label for=""><b>Registration Date & Time: </b>&emsp; {{ value.Register_Date_time }}</label>
+        </div>
+      </div>
+      <div class="form-row" style="float: left;width:50%;padding: 20px">
+        <div class="form-group input">
+          <label for=""><b>Healthcare Number: </b>&emsp; {{ value.HealthCare_no }}</label>
+        </div>
+      </div>
+      <div class="form-row" style="float: left;width:50%;padding: 20px">
+        <div class="form-group input">
+          <label for=""><b>Patient Name: </b>&emsp; {{ value.first_name }} </b>&emsp; {{ value.last_name }}</label>
+        </div>
+      </div>
+      <div class="form-row" style="float: left;width:50%;padding: 20px">
+          <div class="form-group input">
+                <label for=""><b>Email : </b>&emsp; {{ value.email }}</label>
+              </div>
+            </div>
+            <div class="form-row" style="float: left;width:50%;padding: 20px">
+                <div class="form-group input">
+                  <label for=""><b>Gender: </b>&emsp; {{ value.sex }}</label>
+                </div>
+              </div>
+              <div class="form-row" style="float: left;width:50%;padding: 20px">
+                  <div class="form-group input">
+                    <label for=""><b>Date of Birth: </b>&emsp; {{ value.dob }}</label>
+                  </div>
+                </div>
+                <div class="form-row" style="float: left;width:50%;padding: 20px">
+                    <div class="form-group input">
+                      <label for=""><b>Age: </b>&emsp; {{ value.age }}</label>
+                    </div>
+                  </div>
+                  <div class="form-row" style="float: left;width:50%;padding: 20px">
+                      <div class="form-group input">
+                        <label for=""><b>Mode of Arrival: </b>&emsp; {{ value.mode_arrival }}</label>
+                      </div>
+                    </div>
+                    <div class="form-row" style="float: left;width:50%;padding: 20px">
+                        <div class="form-group input">
+                          <label for=""><b>Triage: </b>&emsp; {{ value.triage }}</label>
+                        </div>
+                      </div>
+                <div class="form-row" style="float: left;width:50%;padding: 20px">
+                  <div class="form-group input">
+                    <label for=""><b>Blood Presure: </b>&emsp; {{ value.blood_pressure }}</label>
+                  </div>
+                </div>
+                <div class="form-row" style="float: left;width:50%;padding: 20px">
+                  <div class="form-group input">
+                    <label for=""><b>Body Temperature: </b>&emsp; {{ value.body_temp }}</label>
+                  </div>
+                </div>
+                <div class="form-row" style="float: left;width:50%;padding: 20px">
+                  <div class="form-group input">
+                    <label for=""><b>Pulse : </b>&emsp; {{ value.pulse }}</label
+                    >
+                  </div>
+                </div>
+                <div class="form-row" style="float: left;width:50%;padding: 20px">
+                  <div class="form-group input">
+                    <label for=""><b>Breathing : </b>&emsp; {{ value.breathing }}</label>
+                  </div>
+                  </div>
+                <div class="form-row" style="float: left;width:50%;padding: 20px">
+                    <div class="form-group input">
+                      <label for=""><b>Marital Status: </b>&emsp; {{ value.maritial_status }}</label>
+                    </div>
+                  </div>
+                  <div class="form-row" style="float: left;width:50%;padding: 20px">
+                    <div class="form-group input">
+                      <label for=""><b>Name: </b>&emsp; {{ value.emer_first_name }}</label>
+        </div>
+      </div>
+      <div class="form-row" style="float: left;width:50%;padding: 20px">
+        <div class="form-group input">
+          <label for=""><b>Relationship: </b>&emsp; {{ value.emer_last_name }}</label>
+        </div>
+      </div>
+      <div class="form-row" style="float: left;width:50%;padding: 20px">
+          <div class="form-group input">
+            <label for=""><b>Contact Number: </b>&emsp; {{ value.emer_contact }}</label>
+          </div>
+        </div>
+      <div class="form-row" style="float: left;width:50%;padding: 20px">
+          <div class="form-group input">
+            <label for=""><b>Reason for Registration: </b>&emsp; {{ value.description }}</label>
+        </div>
+      </div>
+      <div class="form-row" style="float: left;width:50%;padding: 20px">
+      <div class="form-group input">
+            <label for=""><b>Phone Number:</label>            
+              <div class="">
+                <label for=""><b>Phone home:</b>&emsp; {{ value.phone_no_home }}</label>
+                &emsp;
+                <label for=""><b>Phone work:</b>&emsp; {{ value.phone_no_work }}</label>
+              </div>
+            </div>
+          </div>
+          <br>
+      <div class="form-row" style="float: left;width:50%;padding: 20px">
+          <div class="form-group input">
+            <label for=""><b>Address: </b>&emsp; {{ value.Address }}</label>
+            
+            <div class="form-group input">
+              
+              <div class="">
+                <label for=""><b>City: </b>&emsp; {{ value.city }}</label>
+                &emsp; &emsp; &emsp;
+                <label for=""><b>State: </b>&emsp; {{ value.state }}</label>
+              </div>
+              <div class="">
+                <label for=""><b>Zip Code: </b>&emsp; {{ value.zip_code }}</label>
+                &emsp;
+                <label for=""><b>Country: </b>&emsp; {{ value.country }}</label>
+              </div>
+            </div>
+    </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group input">
+        <label for=""><b>Hospitalization : </b>&emsp; {{ value.hspt_prcnt }}</label>
+      </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group input">
+          <label for=""><b>Not Hospitalization : </b>&emsp; {{ value.not_h_prcnt }}</label>
+        </div>
+        </div>
+
+    
+  </div>
+</form>
+</div>
+<div class="b-container" style="margin-right:200px;width: 100%;">
+<h2>
+  <a href="?pid={{ value.Pno }}">
+  <input style="width:150px;" type="submit" class="btn btn-primary" value="Edit Info"></input>
+    </a>
+    &emsp;
+  <a href="/delete">
+    <input style="width:150px;" type="submit" class="btn btn-primary" value="Delete Info"></input>
+      </a>
+    </h2>
+  </div>
+</body>
+</html>  

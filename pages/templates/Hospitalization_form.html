@@ -1,0 +1,111 @@
+{% load widget_tweaks %}
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+    integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <title>Hospitalization Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/main.css" />
+
+</head>
+
+<body>
+  <form method="post">
+    <div class="wrapper" style="width:100%;">
+    <h1 class="heading">Hospitalization Form</h1>
+    <div class="area" style="width: 800px;">
+      {% csrf_token %}
+
+      {% for hidden_field in form.hidden_fields %}
+      {{ hidden_field }}
+      {% endfor %}
+      {% for field in form.visible_fields %}
+          <div class="form-group" style="float:left;padding-right: 40px;padding-left: 40px;">
+            {{ field.label_tag }}
+  <div class="input_size" style="width:300px">
+          {{ field }}
+        </div>
+          &emsp;
+        </div>
+      {% if field.help_text %}
+      <small class="form-text">{{ field.help_text }}</small>
+      {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="b-container">
+      <div class="b-available">
+        <div class="key">Total Beds:</div>
+        <div class="value">{{ available_beds }}</div>
+      </div>
+      <div class="b-cards-container">
+        <div class="b-card">
+          <h3>Male Ward</h3>
+          <div class="b-types">
+            <div class="b-type__names">
+              <div class="b-type__name">Deluxe</div>
+              <div class="b-type__name">Private</div>
+              <div class="b-type__name">General</div>
+            </div>
+            <div class="b-type__values">
+              <div class="b-type__value">{{Male_deluxe}}</div>
+              <div class="b-type__value">{{Male_Private}}</div>
+              <div class="b-type__value">{{Male_General}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="b-card">
+          <h3>Female Ward</h3>
+          <div class="b-types">
+            <div class="b-type__names">
+              <div class="b-type__name">Deluxe</div>
+              <div class="b-type__name">Private</div>
+              <div class="b-type__name">General</div>
+            </div>
+            <div class="b-type__values">
+              <div class="b-type__value">{{ Female_deluxe }}</div>
+              <div class="b-type__value">{{ Female_Private }}</div>
+              <div class="b-type__value">{{ Female_General }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="b-selection-container">
+        <h3>Select Bed Type</h3>
+        <div class="select-ward">
+          <div class="ward">
+            <input type="radio" name="ward-gender" value="Male" />
+            <label for="">Male</label>
+          </div>
+          <div class="ward">
+            <input type="radio" name="ward-gender" value="Female" />
+            <label for="">Female</label>
+          </div>
+        </div>
+        <div class="select-b-type">
+          <div class="bed-type">
+            <input type="radio" name="bed-type" value="Deluxe" />
+            <label for="">Deluxe</label>
+          </div>
+          <div class="bed-type">
+            <input type="radio" name="bed-type" value="Private" />
+            <label for="">Private</label>
+          </div>
+          <div class="bed-type">
+            <input type="radio" name="bed-type" value="General" />
+            <label for="">General</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <input type="submit" class="btn btn-primary" style="width: 300px;padding:10px" value="Submit"></input>
+
+  </div>
+  </form>
+</body>
+
+</html>
